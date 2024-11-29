@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 222.2 84% 4.9%;
+
+        --card: 0 0% 100%;
+        --card-foreground: 222.2 84% 4.9%;
+
+        --popover: 0 0% 100%;
+        --popover-foreground: 222.2 84% 4.9%;
+
+        --primary: 142.1 76.2% 36.3%;
+        --primary-foreground: 355.7 100% 97.3%;
+
+        --secondary: 220 14.3% 95.9%;
+        --secondary-foreground: 220.9 39.3% 11%;
+
+        --muted: 220 14.3% 95.9%;
+        --muted-foreground: 220 8.9% 46.1%;
+
+        --accent: 220 14.3% 95.9%;
+        --accent-foreground: 220.9 39.3% 11%;
+
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 210 40% 98%;
+
+        --border: 214.3 31.8% 91.4%;
+        --input: 214.3 31.8% 91.4%;
+        --ring: 142.1 76.2% 36.3%;
+
+        --radius: 0.5rem;
+    }
+
+    .dark {
+        --background: 222.2 84% 4.9%;
+        --foreground: 210 40% 98%;
+
+        --card: 222.2 84% 4.9%;
+        --card-foreground: 210 40% 98%;
+
+        --popover: 222.2 84% 4.9%;
+        --popover-foreground: 210 40% 98%;
+
+        --primary: 142.1 70.6% 45.3%;
+        --primary-foreground: 144.9 80.4% 10%;
+
+        --secondary: 217.2 32.6% 17.5%;
+        --secondary-foreground: 210 40% 98%;
+
+        --muted: 217.2 32.6% 17.5%;
+        --muted-foreground: 215 20.2% 65.1%;
+
+        --accent: 217.2 32.6% 17.5%;
+        --accent-foreground: 210 40% 98%;
+
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 210 40% 98%;
+
+        --border: 217.2 32.6% 17.5%;
+        --input: 217.2 32.6% 17.5%;
+        --ring: 142.1 70.6% 45.3%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply text-foreground;
+        background-image: url('/src/wallpaper.jpg'); /* 경로를 서버에서 접근 가능한 경로로 설정 */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+}
+
+
+
+@layer components {
+    .navbar {
+        @apply sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60;
+    }
+
+    .navbar-inner {
+        @apply container flex h-14 items-center;
+    }
+
+    .navbar-links {
+        @apply mr-4 hidden md:flex;
+    }
+
+    .navbar-link {
+        @apply mr-6 flex items-center space-x-1 text-sm font-medium transition-colors hover:text-primary;
+    }
+
+    .sensor-grid {
+        @apply grid gap-4 md:grid-cols-3;
+    }
+
+    .sensor-card {
+        @apply rounded-lg border bg-card p-8 text-card-foreground shadow-sm transition-all hover:shadow-md;
+    }
+
+    .sensor-value {
+        @apply mt-2 text-2xl font-bold tracking-tight;
+    }
+
+    .control-section {
+        @apply space-y-4;
+    }
+
+    .calendar-section {
+        @apply space-y-6;
+    }
+
+    .calendar-grid {
+        @apply grid gap-4 md:grid-cols-2 lg:grid-cols-3;
+    }
+
+    .image-preview {
+        @apply aspect-square rounded-lg border object-cover;
+    }
+
+    .form-group {
+        @apply space-y-2;
+    }
+
+    .form-label {
+        @apply text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70;
+    }
+
+    .button-group {
+        @apply flex flex-wrap gap-2;
+    }
+
+    .size-box {
+        margin: 15px 10vw 0 10vw;
+    }
+
+    .btn-upload {
+        margin-top: 1.5rem;
+    }
+
+    .mt-s {
+        height: 3rem;
+    }
+
+    .test {
+        @apply bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition-colors duration-300 ease-in-out cursor-pointer;
+    }
+}
